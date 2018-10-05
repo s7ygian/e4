@@ -1,8 +1,11 @@
 package com.test.e4.application.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
 
 import javax.persistence.EntityManager;
@@ -11,12 +14,9 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-import javax.persistence.spi.PersistenceProvider;
 
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.framework.ServiceReference;
+import org.eclipse.persistence.config.PersistenceUnitProperties;
+import org.eclipse.persistence.jpa.PersistenceProvider;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -24,27 +24,28 @@ import org.osgi.service.component.annotations.Deactivate;
 import com.test.e4.application.model.Todo;
 import com.test.e4.application.model.TodoService;
 
-@Component(property = { "osgi.command.scope=test", "osgi.command.function=printTodos" })
+
+
+@Component(service = TodoService.class, property = { "osgi.command.scope=test", "osgi.command.function=printTodos" })
 public class TodoServiceImpl implements TodoService {
 
+	private static AtomicInteger current = new AtomicInteger(1);
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 
 	@Activate
+	@SuppressWarnings("unchecked")
 	protected void activateComponent() {
-		Bundle thisBundle = FrameworkUtil.getBundle(getClass());
-		BundleContext context = thisBundle.getBundleContext();
+		@SuppressWarnings("rawtypes")
+		Map map = new HashMap();
+		map.put(PersistenceUnitProperties.CLASSLOADER, getClass().getClassLoader());
 
-		@SuppressWarnings("unchecked")
-		ServiceReference<PersistenceProvider> serviceReference = (ServiceReference<PersistenceProvider>) context
-				.getServiceReference(PersistenceProvider.class.getName());
-		PersistenceProvider persistenceProvider = context.getService(serviceReference);
-
-		entityManagerFactory = persistenceProvider.createEntityManagerFactory("h2-hibernate", null);
+		PersistenceProvider persistenceProvider = new PersistenceProvider();
+		entityManagerFactory = persistenceProvider.createEntityManagerFactory("h2-eclipselink", map);
 		entityManager = entityManagerFactory.createEntityManager();
-
+		
 		getTodos(todos -> {
-			if (todos.isEmpty()) {
+			if(todos.isEmpty()) {
 				List<Todo> initialModel = createInitialModel();
 				initialModel.forEach(this::saveTodo);
 			}
@@ -64,14 +65,14 @@ public class TodoServiceImpl implements TodoService {
 
 	@Override
 	public void getTodos(Consumer<List<Todo>> todosConsumer) {
-		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Todo> cq = cb.createQuery(Todo.class);
-		Root<Todo> rootTodo = cq.from(Todo.class);
-		CriteriaQuery<Todo> allTodos = cq.select(rootTodo);
-		TypedQuery<Todo> todosQuery = entityManager.createQuery(allTodos);
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Todo> cq = cb.createQuery( Todo.class );
+        Root<Todo> rootTodo = cq.from( Todo.class );
+        CriteriaQuery<Todo> allTodos = cq.select( rootTodo );
+        TypedQuery<Todo> todosQuery = entityManager.createQuery( allTodos );
 
-		List<Todo> todoList = todosQuery.getResultList();
-		todosConsumer.accept(todoList);
+        List<Todo> todoList = todosQuery.getResultList();
+        todosConsumer.accept(todoList);
 	}
 
 	// create or update an existing instance of Todo
@@ -82,7 +83,7 @@ public class TodoServiceImpl implements TodoService {
 		Optional<Todo> todoOptional = getTodo(newTodo.getId());
 
 		// get the actual todo or create a new one
-		Todo todo = todoOptional.orElse(new Todo());
+		Todo todo = todoOptional.orElse(new Todo(current.getAndIncrement()));
 		todo.setSummary(newTodo.getSummary());
 		todo.setDescription(newTodo.getDescription());
 
@@ -122,7 +123,7 @@ public class TodoServiceImpl implements TodoService {
 	public void printTodos() {
 		getTodos(todoList -> todoList.forEach(System.out::println));
 	}
-
+	
 	private List<Todo> createInitialModel() {
 		List<Todo> list = new ArrayList<>();
 		list.add(createTodo("Application model", "Flexible and extensible"));
@@ -136,9 +137,9 @@ public class TodoServiceImpl implements TodoService {
 		list.add(createTodo("Compatibility Layer", "Run Eclipse 3.x"));
 		return list;
 	}
-
+	
 	private Todo createTodo(String summary, String description) {
-		return new Todo(summary, description);
+		return new Todo(current.getAndIncrement(), summary, description);
 	}
 
 }

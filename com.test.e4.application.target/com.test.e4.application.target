@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="com.test.e4" sequenceNumber="6">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target includeMode="feature" name="com.test.e4" sequenceNumber="6">
 <locations><location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit"><unit id="h2.feature.group" version="1.4.197"/><unit id="h2.source.feature.group" version="1.4.197"/><unit id="hibernate-osgi.feature.group" version="5.2.16.Final"/><unit id="hibernate-osgi.source.feature.group" version="5.2.16.Final"/><repository location="https://dl.bintray.com/simon-scholz/H2-Database-Engine/"/></location>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="org.eclipse.sdk.feature.group" version="4.8.0.v20180611-0826"/>
@@ -8,6 +8,10 @@
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20171217-2215"/>
 		<repository location="http://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
+	</location>
+	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+		<unit id="org.eclipse.persistence.sdk.feature.group" version="2.7.3.v20180807-4be1041"/>
+		<repository location="http://download.eclipse.org/rt/eclipselink/updates/"/>
 	</location>
 </locations>
 	<includeBundles>
@@ -22,10 +26,14 @@
 		<plugin id="com.jcraft.jsch.source"/>
 		<plugin id="com.sun.el"/>
 		<plugin id="com.sun.el.source"/>
+		<plugin id="commonj.sdo"/>
+		<plugin id="commonj.sdo.source"/>
 		<plugin id="dom4j"/>
 		<plugin id="dom4j.source"/>
 		<plugin id="javassist"/>
 		<plugin id="javassist.source"/>
+		<plugin id="javax.activation" version="1.1.0.v201211130549"/>
+		<plugin id="javax.activation" version="1.1.0.v201211130549"/>
 		<plugin id="javax.annotation" version="1.2.0.v201602091430"/>
 		<plugin id="javax.annotation" version="1.2.0.v201602091430"/>
 		<plugin id="javax.annotation.source" version="1.2.0.v201602091430"/>
@@ -38,10 +46,26 @@
 		<plugin id="javax.inject.source" version="1.0.0.v20091030"/>
 		<plugin id="javax.interceptor-api"/>
 		<plugin id="javax.interceptor-api.source"/>
-		<plugin id="javax.servlet"/>
+		<plugin id="javax.json-api"/>
+		<plugin id="javax.mail"/>
+		<plugin id="javax.persistence" version="2.2.1.v201807122140"/>
+		<plugin id="javax.persistence" version="2.2.1.v201807122140"/>
+		<plugin id="javax.persistence.source" version="2.2.1.v201807122140"/>
+		<plugin id="javax.persistence.source" version="2.2.1.v201807122140"/>
+		<plugin id="javax.servlet" version="2.4.0.v200806031604"/>
+		<plugin id="javax.servlet" version="2.4.0.v200806031604"/>
+		<plugin id="javax.servlet" version="3.1.0.v201410161800"/>
+		<plugin id="javax.servlet" version="3.1.0.v201410161800"/>
 		<plugin id="javax.servlet.jsp"/>
 		<plugin id="javax.servlet.jsp.source"/>
-		<plugin id="javax.servlet.source"/>
+		<plugin id="javax.servlet.source" version="3.1.0.v201410161800"/>
+		<plugin id="javax.servlet.source" version="3.1.0.v201410161800"/>
+		<plugin id="javax.ws.rs"/>
+		<plugin id="javax.wsdl"/>
+		<plugin id="javax.xml.bind" version="2.2.12.v201410011542"/>
+		<plugin id="javax.xml.bind" version="2.2.12.v201410011542"/>
+		<plugin id="jaxb-core"/>
+		<plugin id="jaxb-xjc"/>
 		<plugin id="net.bytebuddy.byte-buddy"/>
 		<plugin id="net.bytebuddy.byte-buddy.source"/>
 		<plugin id="org.apache.ant"/>
@@ -507,8 +531,8 @@
 		<plugin id="org.eclipse.jdt"/>
 		<plugin id="org.eclipse.jdt.annotation" version="1.1.200.v20171205-1334"/>
 		<plugin id="org.eclipse.jdt.annotation" version="2.2.0.v20180417-0931"/>
-		<plugin id="org.eclipse.jdt.annotation.source" version="1.1.200.v20171205-1334"/>
 		<plugin id="org.eclipse.jdt.annotation.source" version="2.2.0.v20180417-0931"/>
+		<plugin id="org.eclipse.jdt.annotation.source" version="1.1.200.v20171205-1334"/>
 		<plugin id="org.eclipse.jdt.apt.core"/>
 		<plugin id="org.eclipse.jdt.apt.core.source"/>
 		<plugin id="org.eclipse.jdt.apt.pluggable.core"/>
@@ -598,12 +622,14 @@
 		<plugin id="org.eclipse.osgi" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi" version="3.13.0.v20180409-1500"/>
+		<plugin id="org.eclipse.osgi" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi.compatibility.state"/>
 		<plugin id="org.eclipse.osgi.compatibility.state.source"/>
 		<plugin id="org.eclipse.osgi.services" version="3.7.0.v20180223-1712"/>
 		<plugin id="org.eclipse.osgi.services" version="3.7.0.v20180223-1712"/>
 		<plugin id="org.eclipse.osgi.services.source" version="3.7.0.v20180223-1712"/>
 		<plugin id="org.eclipse.osgi.services.source" version="3.7.0.v20180223-1712"/>
+		<plugin id="org.eclipse.osgi.source" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi.source" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi.source" version="3.13.0.v20180409-1500"/>
 		<plugin id="org.eclipse.osgi.source" version="3.13.0.v20180409-1500"/>
@@ -651,6 +677,32 @@
 		<plugin id="org.eclipse.pde.ui.source"/>
 		<plugin id="org.eclipse.pde.ui.templates"/>
 		<plugin id="org.eclipse.pde.ui.templates.source"/>
+		<plugin id="org.eclipse.persistence.antlr"/>
+		<plugin id="org.eclipse.persistence.antlr.source"/>
+		<plugin id="org.eclipse.persistence.asm"/>
+		<plugin id="org.eclipse.persistence.asm.source"/>
+		<plugin id="org.eclipse.persistence.core"/>
+		<plugin id="org.eclipse.persistence.core.source"/>
+		<plugin id="org.eclipse.persistence.dbws"/>
+		<plugin id="org.eclipse.persistence.dbws.builder"/>
+		<plugin id="org.eclipse.persistence.dbws.builder.source"/>
+		<plugin id="org.eclipse.persistence.dbws.source"/>
+		<plugin id="org.eclipse.persistence.jpa"/>
+		<plugin id="org.eclipse.persistence.jpa.jpql"/>
+		<plugin id="org.eclipse.persistence.jpa.jpql.source"/>
+		<plugin id="org.eclipse.persistence.jpa.source"/>
+		<plugin id="org.eclipse.persistence.moxy"/>
+		<plugin id="org.eclipse.persistence.moxy.source"/>
+		<plugin id="org.eclipse.persistence.nosql"/>
+		<plugin id="org.eclipse.persistence.nosql.source"/>
+		<plugin id="org.eclipse.persistence.oracle"/>
+		<plugin id="org.eclipse.persistence.oracle.nosql"/>
+		<plugin id="org.eclipse.persistence.oracle.nosql.source"/>
+		<plugin id="org.eclipse.persistence.oracle.source"/>
+		<plugin id="org.eclipse.persistence.oracleddlparser"/>
+		<plugin id="org.eclipse.persistence.oracleddlparser.source"/>
+		<plugin id="org.eclipse.persistence.sdo"/>
+		<plugin id="org.eclipse.persistence.sdo.source"/>
 		<plugin id="org.eclipse.platform"/>
 		<plugin id="org.eclipse.platform.doc.isv"/>
 		<plugin id="org.eclipse.platform.doc.user"/>
@@ -757,6 +809,7 @@
 		<plugin id="org.eclipse.ui.workbench.texteditor.source" version="3.11.0.v20180419-2011"/>
 		<plugin id="org.eclipse.update.configurator"/>
 		<plugin id="org.eclipse.update.configurator.source"/>
+		<plugin id="org.glassfish.javax.json"/>
 		<plugin id="org.h2"/>
 		<plugin id="org.h2.source"/>
 		<plugin id="org.hamcrest.core"/>
@@ -765,8 +818,10 @@
 		<plugin id="org.hibernate.common.hibernate-commons-annotations.source"/>
 		<plugin id="org.hibernate.core"/>
 		<plugin id="org.hibernate.core.source"/>
-		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api"/>
-		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api.source"/>
+		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api" version="1.0.0.Final"/>
+		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api" version="1.0.0.Final"/>
+		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api.source" version="1.0.0.Final"/>
+		<plugin id="org.hibernate.javax.persistence.hibernate-jpa-2.1-api.source" version="1.0.0.Final"/>
 		<plugin id="org.hibernate.osgi"/>
 		<plugin id="org.hibernate.osgi.source"/>
 		<plugin id="org.jboss.jandex"/>
@@ -797,6 +852,7 @@
 		<plugin id="org.junit.source"/>
 		<plugin id="org.junit.vintage.engine"/>
 		<plugin id="org.junit.vintage.engine.source"/>
+		<plugin id="org.mongodb.mongo-java-driver"/>
 		<plugin id="org.objectweb.asm"/>
 		<plugin id="org.objectweb.asm.source"/>
 		<plugin id="org.objectweb.asm.tree"/>

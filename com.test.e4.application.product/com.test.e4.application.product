@@ -3,7 +3,6 @@
 
 <product name="com.test.e4.application.product" uid="com.test.e4.application.product" id="com.test.e4.application.product" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0" useFeatures="true" includeLaunchers="true">
 
-
    <configIni use="default">
    </configIni>
 
@@ -16,23 +15,24 @@
 
    <windowImages/>
 
-
    <launcher name="com.test.e4.application">
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
 
-
    <vm>
    </vm>
+
+   <plugins>
+   </plugins>
 
    <features>
       <feature id="org.eclipse.e4.rcp"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.emf.common"/>
       <feature id="h2"/>
-      <feature id="hibernate-osgi"/>
+      <feature id="org.eclipse.persistence.jpa"/>
       <feature id="com.test.e4.application.feature"/>
    </features>
 
@@ -42,7 +42,6 @@
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
-      <plugin id="org.hibernate.osgi" autoStart="true" startLevel="0" />
    </configurations>
 
    <preferencesInfo>
