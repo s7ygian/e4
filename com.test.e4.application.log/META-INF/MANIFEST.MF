@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.test.e4.application.log
+Bundle-SymbolicName: com.test.e4.application.log
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: com.test.e4.application.log
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: ch.qos.logback.classic,
+ ch.qos.logback.core,
+ org.eclipse.core.runtime
+Import-Package: org.slf4j,
+ org.slf4j.spi
+Bundle-Activator: com.test.e4.application.log.Activator

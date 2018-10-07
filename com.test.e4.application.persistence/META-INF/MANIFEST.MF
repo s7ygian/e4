@@ -9,6 +9,7 @@ Require-Bundle: javax.persistence,
  org.eclipse.persistence.jpa,
  org.h2
 Import-Package: com.test.e4.application.model,
- org.osgi.service.component.annotations;version="1.2.0";resolution:=optional
+ org.osgi.service.component.annotations;resolution:=optional,
+ org.slf4j
 Service-Component: OSGI-INF/com.test.e4.application.service.TodoServiceImpl.xml
 Bundle-ActivationPolicy: lazy
