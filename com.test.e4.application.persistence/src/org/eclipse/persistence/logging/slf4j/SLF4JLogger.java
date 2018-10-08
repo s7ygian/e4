@@ -243,6 +243,7 @@ public class SLF4JLogger extends AbstractSessionLog {
     public boolean shouldLog(final int level, final String categoryName) {
         final LogCategory category = LogCategory.toValue(categoryName);
         if (category == null) {
+        	if (categoryName.equals("moxy")) return false;
             throw new IllegalArgumentException("Unknown logging category name.");
         }
         return logLevels[category.getId()].shouldLog((byte)level);

@@ -11,5 +11,4 @@ Require-Bundle: javax.persistence,
 Import-Package: com.test.e4.application.model,
  org.osgi.service.component.annotations;resolution:=optional,
  org.slf4j
-Service-Component: OSGI-INF/com.test.e4.application.service.TodoServiceImpl.xml
 Bundle-ActivationPolicy: lazy

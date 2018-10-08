@@ -6,7 +6,6 @@
     <class>com.test.e4.application.model.Todo</class>
     <properties>
       <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-      <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/h2db/testDB" />
       <property name="javax.persistence.jdbc.user" value="sa" />
       <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
       <property name="eclipselink.ddl-generation.output-mode" value="database" />

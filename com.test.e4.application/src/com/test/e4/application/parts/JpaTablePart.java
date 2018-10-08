@@ -13,14 +13,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.test.e4.application.model.Todo;
-import com.test.e4.application.model.TodoService;
 
 public class JpaTablePart {
 
 	private static final Logger logger = LoggerFactory.getLogger(JpaTablePart.class);
 
 	@PostConstruct
-	public void postConstruct(Composite parent, TodoService todoService) {
+	public void postConstruct(Composite parent) {
 		logger.info("Works!");
 		TableViewer viewer = new TableViewer(parent);
 		viewer.getTable().setHeaderVisible(true);
@@ -64,8 +63,6 @@ public class JpaTablePart {
 				return super.getText(element);
 			}
 		});
-
-		todoService.getTodos(viewer::setInput);
 	}
 
 }
