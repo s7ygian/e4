@@ -9,18 +9,13 @@ import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.test.e4.application.model.Todo;
 
 public class JpaTablePart {
 
-	private static final Logger logger = LoggerFactory.getLogger(JpaTablePart.class);
-
 	@PostConstruct
 	public void postConstruct(Composite parent) {
-		logger.info("Works!");
 		TableViewer viewer = new TableViewer(parent);
 		viewer.getTable().setHeaderVisible(true);
 		viewer.setContentProvider(ArrayContentProvider.getInstance());
