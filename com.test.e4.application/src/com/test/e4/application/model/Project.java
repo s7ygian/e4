@@ -27,7 +27,7 @@ public class Project {
 		BundleWiring bundleWiring = bundle.adapt(BundleWiring.class);
 		ClassLoader classLoader = bundleWiring.getClassLoader();
 		map.put(PersistenceUnitProperties.CLASSLOADER, classLoader);
-		map.put("javax.persistence.jdbc.url", "jdbc:h2:~/h2db/testDB_" + UUID.randomUUID());
+		map.put("javax.persistence.jdbc.url", "jdbc:h2:~/h2db/testDB_" + UUID.randomUUID() + ";MV_STORE=FALSE");
 		PersistenceProvider persistenceProvider = new PersistenceProvider();
 		entityManagerFactory = persistenceProvider.createEntityManagerFactory("h2-eclipselink", map);
 		entityManager = entityManagerFactory.createEntityManager();

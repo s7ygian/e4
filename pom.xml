@@ -5,12 +5,10 @@
   <artifactId>com.test.e4.application.root</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <parent>
-    <groupId>com.test.e4.application</groupId>
-    <artifactId>com.test.e4.application.config</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>com.test.e4.application.config</relativePath>
-  </parent>
+  <properties>
+    <tycho.version>1.2.0</tycho.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <modules>
     <module>com.test.e4.application</module>
     <module>com.test.e4.application.feature</module>
@@ -19,4 +17,54 @@
     <module>com.test.e4.application.product</module>
     <module>com.test.e4.application.target</module>
   </modules>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-packaging-plugin</artifactId>
+        <version>${tycho.version}</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <id>package-feature</id>
+            <configuration>
+              <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho.version}</version>
+        <configuration>
+          <target>
+            <artifact>
+              <groupId>com.test.e4.application</groupId>
+              <artifactId>com.test.e4.application.target</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+            </artifact>
+          </target>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
