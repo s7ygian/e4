@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target includeMode="feature" name="com.test.e4" sequenceNumber="6">
-<locations><location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit"><unit id="h2.feature.group" version="1.4.197"/><unit id="h2.source.feature.group" version="1.4.197"/><repository location="https://dl.bintray.com/simon-scholz/H2-Database-Engine/"/></location>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?>
+<target includeMode="feature" name="com.test.e4" sequenceNumber="6">
+<locations>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+        <unit id="h2.feature.group" version="1.4.197"/>
+        <unit id="h2.source.feature.group" version="1.4.197"/>
+        <repository location="https://dl.bintray.com/simon-scholz/H2-Database-Engine/"/>
+    </location>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="org.eclipse.sdk.feature.group" version="4.8.0.v20180611-0826"/>
 		<repository location="http://download.eclipse.org/releases/photon"/>

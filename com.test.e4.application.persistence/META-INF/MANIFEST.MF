@@ -9,6 +9,5 @@ Require-Bundle: javax.persistence,
  org.eclipse.persistence.jpa,
  org.h2
 Import-Package: com.test.e4.application.model,
- org.osgi.service.component.annotations;resolution:=optional,
  org.slf4j
 Bundle-ActivationPolicy: lazy
