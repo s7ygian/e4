@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?>
-<target includeMode="feature" name="com.test.e4" sequenceNumber="6">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target includeMode="feature" name="com.test.e4" sequenceNumber="6">
 <locations>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="org.eclipse.rap.e4.equinox.target.feature.feature.group" version="3.6.0.20180912-0820"/>
@@ -14,12 +13,10 @@
 	</location>
     <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
         <unit id="h2.feature.group" version="1.4.197"/>
-        <unit id="h2.source.feature.group" version="1.4.197"/>
         <repository location="https://dl.bintray.com/simon-scholz/H2-Database-Engine/"/>
     </location>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 		<unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
-		<unit id="org.slf4j.api" version="1.7.2.v20121108-1250"/>
 		<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20180606145124/repository"/>
 	</location>
 </locations>
