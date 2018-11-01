@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="com.test.e4.application.rap.product" uid="com.test.e4.application.rap.product" id="com.test.e4.application.rap.RAP" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="com.test.e4.application.rcp.product" uid="com.test.e4.application.rcp.product" id="com.test.e4.application.rcp.RCP" application="org.eclipse.e4.ui.workbench.swt.E4Application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <configIni use="default">
    </configIni>
@@ -16,7 +16,6 @@
    </launcherArgs>
 
    <windowImages/>
-
 
    <launcher name="com.test.e4.application">
       <win useIco="false">
@@ -33,9 +32,10 @@
    <features>
       <feature id="com.test.e4.application.feature"/>
       <feature id="h2"/>
+      <feature id="org.eclipse.e4.rcp"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.persistence.jpa"/>
-      <feature id="org.eclipse.rap.e4.equinox.target.feature"/>
-      <feature id="org.eclipse.rap.e4.feature"/>
    </features>
 
    <configurations>
@@ -44,6 +44,7 @@
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
    </configurations>
 
    <preferencesInfo>

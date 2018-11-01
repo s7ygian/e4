@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.test.e4.application.rcp
+Bundle-SymbolicName: com.test.e4.application.rcp;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.e4.ui.model.workbench,
+ org.eclipse.jface,
+ org.eclipse.e4.ui.services,
+ org.eclipse.e4.ui.workbench,
+ org.eclipse.e4.core.di,
+ org.eclipse.e4.ui.di,
+ org.eclipse.e4.core.contexts,
+ org.eclipse.e4.ui.css.swt.theme
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
