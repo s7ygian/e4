@@ -19,5 +19,9 @@
 		<unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
 		<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20180606145124/repository"/>
 	</location>
+	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+		<unit id="org.eclipse.nebula.feature.feature.group" version="1.4.0.201804281520"/>
+		<repository location="http://download.eclipse.org/nebula/releases/latest"/>
+	</location>
 </locations>
 </target>
