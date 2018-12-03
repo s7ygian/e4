@@ -6,11 +6,11 @@
          name="RAP"
          point="org.eclipse.core.runtime.products">
       <product
-            name="com.test.e4.application.product"
+            name="com.test.e4.application.rap.product"
             application="org.eclipse.e4.ui.workbench.swt.E4Application">
          <property
                name="appName"
-               value="com.test.e4.application.product">
+               value="com.test.e4.application.rap.product">
          </property>
          <property
                name="applicationXMI"
