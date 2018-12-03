@@ -16,6 +16,10 @@
                name="applicationXMI"
                value="com.test.e4.application/Application.e4xmi">
          </property>
+		 <property
+     		   name="applicationCSS"
+			   value="platform:/plugin/com.test.e4.application/resources/css/default.css">
+         </property> 
          <property
            	   name="lifeCycleURI"
                value="bundleclass://com.test.e4.application/com.test.e4.application.Startup">

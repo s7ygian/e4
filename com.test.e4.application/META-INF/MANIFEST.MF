@@ -21,9 +21,12 @@ Import-Package: javax.annotation,
  org.eclipse.swt,
  org.eclipse.swt.dnd,
  org.eclipse.swt.events,
+ org.eclipse.swt.graphics,
+ org.eclipse.swt.layout,
  org.eclipse.swt.widgets,
  org.osgi.framework,
  org.osgi.framework.wiring,
  org.osgi.service.event,
  org.slf4j
 Automatic-Module-Name: com.test.e4.application
+Require-Bundle: org.eclipse.nebula.widgets.opal.logindialog;bundle-version="1.0.0"
