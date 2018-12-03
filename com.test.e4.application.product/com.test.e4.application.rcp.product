@@ -36,6 +36,9 @@
       <feature id="org.eclipse.emf.common"/>
       <feature id="org.eclipse.emf.ecore"/>
       <feature id="org.eclipse.persistence.jpa"/>
+      <feature id="org.eclipse.nebula.widgets.opal.logindialog.feature"/>
+      <feature id="org.eclipse.nebula.widgets.opal.dialog.feature"/>
+      <feature id="org.eclipse.nebula.widgets.opal.commons.feature"/>
    </features>
 
    <configurations>

@@ -15,6 +15,7 @@ Import-Package: javax.annotation,
  org.eclipse.e4.ui.model.application,
  org.eclipse.e4.ui.workbench,
  org.eclipse.e4.ui.workbench.lifecycle,
+ org.eclipse.nebula.widgets.opal.loginDialog,
  org.eclipse.persistence.config,
  org.eclipse.persistence.jpa,
  org.eclipse.persistence.logging,
@@ -29,4 +30,3 @@ Import-Package: javax.annotation,
  org.osgi.service.event,
  org.slf4j
 Automatic-Module-Name: com.test.e4.application
-Require-Bundle: org.eclipse.nebula.widgets.opal.logindialog;bundle-version="1.0.0"
