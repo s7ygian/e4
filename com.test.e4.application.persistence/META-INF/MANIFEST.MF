@@ -5,9 +5,8 @@ Bundle-SymbolicName: com.test.e4.application.persistence
 Automatic-Module-Name: com.test.e4.persistence
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: javax.persistence,
- org.eclipse.persistence.jpa,
- org.h2
+Require-Bundle: org.eclipse.persistence.jpa,
+ de.fhg.ivi.ped.osgiwrapper.h2
 Import-Package: com.test.e4.application.model,
  org.slf4j
 Bundle-ActivationPolicy: lazy

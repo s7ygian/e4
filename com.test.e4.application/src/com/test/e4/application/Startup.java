@@ -18,7 +18,6 @@ import org.osgi.service.event.EventHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@SuppressWarnings("restriction")
 public class Startup {
 
 	private static final Logger logger = LoggerFactory.getLogger(Startup.class);

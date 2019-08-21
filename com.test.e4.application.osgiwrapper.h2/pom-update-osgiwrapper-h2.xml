@@ -1,0 +1,215 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.fhg.ivi.ped</groupId>
+  <artifactId>de.fhg.ivi.ped.osgiwrapper.h2</artifactId>
+  <version>1.0.0.qualifier</version>
+  <packaging>bundle</packaging>
+
+  <licenses>
+    <license>
+      <name>Fraunhofer IVI (@Copyright 2013)</name>
+      <comments>All rights reserved.</comments>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <build>
+
+    <plugins>
+
+      <!-- ============================================================================== -->
+      <!-- <CLEAN> PHASE BINDINGS -->
+      <!-- ============================================================================== -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.5</version>
+        <executions>
+          <execution>
+            <id>clean:clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <configuration>
+              <filesets>
+                <fileset>
+                  <directory>${basedir}/lib</directory>
+                  <includes>
+                    <include>**/*</include>
+                  </includes>
+                </fileset>
+                <fileset>
+                  <directory>${basedir}/bin</directory>
+                  <includes>
+                    <include>**/*</include>
+                  </includes>
+                </fileset>
+              </filesets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <executions>
+          <execution>
+            <id>eclipse:clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>eclipse:eclipse</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>eclipse</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- ============================================================================== -->
+      <!-- <GENERATE RESOURCES> PHASE BINDINGS -->
+      <!-- ============================================================================== -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>dependency:copy-dependencies</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/lib</outputDirectory>
+              <includeScope>compile</includeScope>
+              <includeScope>runtime</includeScope>
+              <excludeTypes>pom</excludeTypes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      
+
+      <!-- ============================================================================== -->
+      <!-- <COMPILE> PHASE BINDINGS -->
+      <!-- ============================================================================== -->
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.0</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <configuration>
+              <source>${maven.compiler.source}</source>
+              <target>${maven.compiler.target}</target>
+              <compilerArgument>-Xlint:all</compilerArgument>
+              <showWarnings>true</showWarnings>
+              <showDeprecation>false</showDeprecation>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- ============================================================================== -->
+      <!-- <PROCESS CLASSES> PHASE BINDINGS -->
+      <!-- ============================================================================== -->
+
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>4.2.0</version>
+        <extensions>true</extensions>
+        <executions>
+          <execution>
+            <id>bundle:manifest</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+            <configuration>
+              <manifestLocation>META-INF</manifestLocation>
+              <instructions>
+                <Bundle-Name>de.fhg.ivi.ped.osgiwrapper.h2</Bundle-Name>
+                <Bundle-SymbolicName>de.fhg.ivi.ped.osgiwrapper.h2;singleton:=true</Bundle-SymbolicName>
+                <Bundle-Version>1.0.0.qualifier</Bundle-Version>
+                <Bundle-Activator></Bundle-Activator>
+                <Bundle-RequiredExecutionEnvironment>JavaSE-1.8</Bundle-RequiredExecutionEnvironment>
+                <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                <Embed-Dependency>*;scope=compile|runtime;type=!pom,inline=false</Embed-Dependency>
+                <Embed-Transitive>true</Embed-Transitive>
+                <Embed-Directory>lib</Embed-Directory>
+                <Import-Package>!*</Import-Package>
+                <Export-Package>org.h2.*</Export-Package>
+              </instructions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>antrun:run</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <replace file=".classpath" token="kind=&quot;var&quot; path=&quot;M2_REPO/com/h2database" value="exported=&quot;true&quot; kind=&quot;var&quot; path=&quot;M2_REPO/com/h2database" />
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <dependencies>
+
+    <!-- ================================================================== -->
+    <!-- PROVIDED LIBRARIES -->
+    <!-- ================================================================== -->
+
+    <!-- ================================================================== -->
+    <!-- LIBRARIES -->
+    <!-- ================================================================== -->
+
+    <!-- datenbank -->
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.199</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
