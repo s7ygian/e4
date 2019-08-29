@@ -6,16 +6,18 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <properties>
-    <tycho.version>1.2.0</tycho.version>
+    <tycho.version>1.4.0</tycho.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <modules>
     <module>com.test.e4.application</module>
     <module>com.test.e4.application.feature</module>
     <module>com.test.e4.application.log</module>
+	<module>com.test.e4.application.osgiwrapper.h2</module>
     <module>com.test.e4.application.persistence</module>
-    <module>com.test.e4.application.product</module>
-    <module>com.test.e4.application.target</module>
+	<module>com.test.e4.application.rcp</module>
+    <module>com.test.e4.application.rcp.product</module>
+    <module>com.test.e4.application.rcp.target</module>
     <module>com.test.e4.application.tests</module>
   </modules>
   <build>
@@ -48,7 +50,7 @@
           <target>
             <artifact>
               <groupId>com.test.e4.application</groupId>
-              <artifactId>com.test.e4.application.target</artifactId>
+              <artifactId>com.test.e4.application.rcp.target</artifactId>
               <version>1.0.0-SNAPSHOT</version>
             </artifact>
           </target>
@@ -56,11 +58,6 @@
             <environment>
               <os>win32</os>
               <ws>win32</ws>
-              <arch>x86_64</arch>
-            </environment>
-            <environment>
-              <os>macosx</os>
-              <ws>cocoa</ws>
               <arch>x86_64</arch>
             </environment>
           </environments>

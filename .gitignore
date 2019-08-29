@@ -1,9 +1,12 @@
 /.metadata/
 /**/bin/
+/**/lib/
+/**/.metadata/
 /**/target/
 .apt_generated
 .classpath
 .factorypath
+.polyglot.build.properties
 .project
 .settings
 .springBeans

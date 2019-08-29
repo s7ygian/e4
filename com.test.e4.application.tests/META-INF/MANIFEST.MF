@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: com.test.e4.application.tests
 Bundle-SymbolicName: com.test.e4.application.tests
 Bundle-Version: 1.0.0.qualifier
+Fragment-Host: com.test.e4.application
 Automatic-Module-Name: com.test.e4.application.tests
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.junit,
