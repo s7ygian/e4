@@ -13,9 +13,9 @@
     <module>com.test.e4.application</module>
     <module>com.test.e4.application.feature</module>
     <module>com.test.e4.application.log</module>
-	<module>com.test.e4.application.osgiwrapper.h2</module>
+    <module>com.test.e4.application.osgiwrapper.h2</module>
     <module>com.test.e4.application.persistence</module>
-	<module>com.test.e4.application.rcp</module>
+    <module>com.test.e4.application.rcp</module>
     <module>com.test.e4.application.rcp.product</module>
     <module>com.test.e4.application.rcp.target</module>
     <module>com.test.e4.application.tests</module>
