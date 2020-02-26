@@ -1,4 +1,5 @@
 /.metadata/
+/.sonarlint/
 /**/bin/
 /**/lib/
 /**/.metadata/
@@ -11,3 +12,9 @@
 .settings
 .springBeans
 .sts4-cache
+/Leitlinie - JavaCodeStyleCleanUp.xml
+/Leitlinie - JavaCodeStyleCodeTemplates.xml
+/Leitlinie - JavaCodeStyleFormatter.xml
+/Leitlinie - JavaEditorTemplates.xml
+/maven-settings-nexus.xml
+/stssettings-4.5.1.txt

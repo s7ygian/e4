@@ -2,37 +2,37 @@
 <?pde version="3.8"?>
 <target includeMode="feature" name="com.test.e4" sequenceNumber="6">
   <locations>  
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
-      <repository location="https://download.eclipse.org/releases/2019-06"/>
-      <unit id="org.eclipse.sdk.feature.group" version="4.12.0.v20190605-1801"/>
-      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.18.0.v20190528-1257"/>
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/releases/2019-12"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.14.0.v20191210-0610"/>
+      <unit id="org.eclipse.equinox.sdk.feature.group" version="3.20.0.v20191122-2104"/>
     </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
-      <repository location="https://download.eclipse.org/technology/babel/update-site/R0.17.0/2019-06/"/>
-      <unit id="org.eclipse.babel.nls_eclipse_de.feature.group" version="4.12.0.v20190713060001"/>
+    <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/technology/babel/update-site/R0.17.1/2019-12/"/>
+      <unit id="org.eclipse.babel.nls_eclipse_de.feature.group" version="4.14.0.v20200113020001"/>
     </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
-      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190602212107/repository"/>
+    <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20191126223242/repository"/>
       <unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
     </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
+    <location includeAllPlatforms="true" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <repository location="https://download.eclipse.org/rt/eclipselink/nightly-updates/"/>
-      <unit id="org.eclipse.persistence.sdk.feature.group" version="2.7.5.v20190826-74490fb827"/>
+      <unit id="org.eclipse.persistence.sdk.feature.group" version="2.7.7.v20200221-4a36f43ad2"/>
     </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <repository location="https://download.eclipse.org/e4/snapshots/org.eclipse.e4.tools/latest/"/>
-      <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20190808-1809"/>
+      <unit id="org.eclipse.e4.tools.spies.feature.feature.group" version="0.18.0.v20200203-1625"/>
     </location>
-    <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
+    <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
       <repository location="https://download.eclipse.org/nebula/releases/latest"/>
-      <unit id="org.eclipse.nebula.feature.feature.group" version="2.1.0.201907151344"/>
+      <unit id="org.eclipse.nebula.feature.feature.group" version="2.3.0.201912241810"/>
     </location>
   </locations>
-  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
   <environment>
     <os>win32</os>
     <ws>win32</ws>
     <arch>x86_64</arch>
     <nl>de_DE</nl>
   </environment>
+  <targetJRE path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 </target>
